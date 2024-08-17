@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu5uoi04fkgta"]
+
+[ext_resource type="Texture2D" uid="uid://cfxoo8joulu12" path="res://bullet.png" id="1_c8cvp"]
+[ext_resource type="Script" path="res://bullet.gd" id="2_4pvr0"]
+
+[sub_resource type="GDScript" id="GDScript_51ha0"]
+script/source = "extends CharacterBody2D
+
+
+
+# Speed of the bullet
+var speed = 800
+
+func _process(delta):
+	# Move the bullet forward in the direction it is facing
+	position += Vector2(cos(rotation), sin(rotation)) * speed * delta
+
+	# Delete the bullet if it goes off-screen
+	if not get_viewport_rect().has_point(global_position):
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8mmw"]
+size = Vector2(20.75, 7.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(357, 266)
+script = SubResource("GDScript_51ha0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19, -1)
+scale = Vector2(0.0419847, 0.0851062)
+texture = ExtResource("1_c8cvp")
+script = ExtResource("2_4pvr0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.625, -1.75)
+shape = SubResource("RectangleShape2D_f8mmw")

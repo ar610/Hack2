@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3vvspxg0bumk"]
+
+[ext_resource type="Script" path="res://main_scene.gd" id="1_8ocw0"]
+[ext_resource type="Texture2D" uid="uid://b7uuf670rsr0t" path="res://bgzh1.jpg" id="1_pu3qj"]
+[ext_resource type="Texture2D" uid="uid://4kxvu3fwp5o6" path="res://soldier.png" id="2_otsy0"]
+[ext_resource type="Script" path="res://soldier.gd" id="3_8bhg4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8ocw0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(581.188, 328.125)
+scale = Vector2(0.881047, 0.623825)
+texture = ExtResource("1_pu3qj")
+
+[node name="Soldier" type="Sprite2D" parent="."]
+position = Vector2(552, 326)
+scale = Vector2(0.407895, 0.31746)
+texture = ExtResource("2_otsy0")
+script = ExtResource("3_8bhg4")

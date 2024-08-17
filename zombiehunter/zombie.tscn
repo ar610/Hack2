@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bba8ls1l1bxmx"]
+
+[ext_resource type="Script" path="res://spawning.gd" id="1_wcws6"]
+[ext_resource type="Texture2D" uid="uid://wbqdsxy83ufa" path="res://zombie.png" id="2_xmut3"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_wcws6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xmut3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
